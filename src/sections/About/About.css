@@ -1,0 +1,120 @@
+.dk-about-section {
+  background-color: #F5F5F5;
+  padding: 6rem 0;
+  color: #1D3958;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Roundel watermark */
+.dk-about-roundel {
+  position: absolute;
+  top: -80px;
+  right: -120px;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 0;
+}
+.dk-about-roundel img {
+  width: 500px;
+}
+
+.dk-section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 0.75rem;
+  color: #053C5E;
+  font-family: var(--pg-font-heading);
+}
+
+.dk-title-underline {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #DB222A, #942B3B);
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+.dk-about-text {
+  position: relative;
+  z-index: 1;
+}
+
+.dk-about-text p {
+  color: #353652;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.dk-collab {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(29, 57, 88, 0.12);
+}
+
+.dk-collab-label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #7C2E41;
+  margin-bottom: 1rem;
+}
+
+.dk-collab-logos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dk-collab-logo {
+  height: 44px;
+  width: auto;
+  opacity: 0.9;
+}
+
+/* PG logo is all-black SVG — scale it to match CAP logo visually */
+.dk-collab-logo-pg {
+  height: 36px;
+}
+
+.dk-collab-x {
+  font-size: 1.25rem;
+  color: #4C334D;
+  font-weight: 300;
+}
+
+.dk-about-image {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.dk-about-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(5, 60, 94, 0.18);
+}
+
+@media (max-width: 991.98px) {
+  .dk-about-section {
+    padding: 3.5rem 0;
+  }
+  .dk-section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .dk-about-image img {
+    max-width: 100%;
+  }
+  .dk-about-roundel img {
+    width: 300px;
+  }
+}

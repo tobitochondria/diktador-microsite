@@ -1,0 +1,226 @@
+/* ==============================
+   DIKTADOR – Cards Section
+   ============================== */
+
+.dk-cards-section {
+  background-color: #eceae6;
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.dk-cards-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.dk-title-underline-center {
+  margin: 0 auto 1rem;
+}
+
+.dk-cards-subtitle {
+  color: #643047;
+  font-size: 1.1rem;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Card Hand Wrapper ── */
+.dk-cards-hand-wrapper {
+  position: relative;
+  padding: 0.75rem 0;
+}
+
+/* Decorative back-card accents behind the fan */
+.dk-back-accent {
+  position: absolute;
+  width: 155px;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+  bottom: 18%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+.dk-back-accent img {
+  width: 100%;
+  display: block;
+}
+.dk-back-left {
+  left: 50%;
+  margin-left: -420px;
+  transform: rotate(-26deg);
+  transform-origin: 50% 100%;
+}
+.dk-back-right {
+  right: 50%;
+  margin-right: -420px;
+  transform: rotate(26deg);
+  transform-origin: 50% 100%;
+}
+
+/* ── Card Fan ── */
+.dk-cards-hand {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+  min-height: 380px;
+}
+
+.dk-playing-card {
+  width: 175px;
+  flex-shrink: 0;
+  margin: 0 -18px;
+  transform: translateY(var(--card-offset)) rotate(var(--card-angle));
+  transform-origin: 50% 100%;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: var(--card-z);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 12px 28px rgba(5, 60, 94, 0.08);
+}
+
+.dk-playing-card:hover,
+.dk-playing-card.is-lifted {
+  transform: translateY(-40px) rotate(0deg) scale(1.08);
+  z-index: 20 !important;
+  box-shadow:
+    0 24px 48px rgba(5, 60, 94, 0.2),
+    0 0 0 3px rgba(219, 34, 42, 0.4);
+}
+
+.dk-playing-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ── Info Area ── */
+.dk-card-info {
+  text-align: center;
+  min-height: 8rem;
+  padding: 1.5rem 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.dk-card-info-content {
+  animation: dkCardInfoIn 0.25s ease both;
+}
+
+.dk-card-info-name {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 1.6rem;
+  color: #1D3958;
+  margin-bottom: 0.3rem;
+}
+
+.dk-card-info-desc {
+  color: #4C334D;
+  font-size: 1rem;
+  font-style: italic;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.dk-card-info-hint {
+  color: #942B3B;
+  font-size: 0.95rem;
+  opacity: 0.5;
+  margin: 0;
+}
+.dk-card-info-hint i {
+  margin-right: 0.4rem;
+}
+
+@keyframes dkCardInfoIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1199.98px) {
+  .dk-playing-card {
+    width: 155px;
+    margin: 0 -15px;
+  }
+  .dk-back-left {
+    margin-left: -370px;
+  }
+  .dk-back-right {
+    margin-right: -370px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .dk-cards-section {
+    padding: 4rem 0 3rem;
+  }
+  .dk-playing-card {
+    width: 135px;
+    margin: 0 -12px;
+  }
+  .dk-cards-hand {
+    min-height: 300px;
+  }
+  .dk-back-accent {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .dk-cards-hand {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: auto;
+    padding: 0;
+  }
+  .dk-playing-card {
+    width: 28%;
+    min-width: 100px;
+    margin: 0;
+    transform: none !important;
+    border-radius: 8px;
+  }
+  .dk-playing-card:hover,
+  .dk-playing-card.is-lifted {
+    transform: translateY(-6px) scale(1.03) !important;
+  }
+  .dk-card-info-name {
+    font-size: 1.3rem;
+  }
+  .dk-card-info-desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .dk-playing-card {
+    width: 42%;
+  }
+  .dk-cards-section {
+    padding: 3rem 0 2rem;
+  }
+}

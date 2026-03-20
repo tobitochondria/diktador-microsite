@@ -1,0 +1,112 @@
+.dk-navbar {
+  background-color: #1D3958;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1030;
+}
+
+.dk-navbar .navbar-brand img {
+  height: 32px;
+  width: auto;
+  transition: opacity 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+.dk-navbar .navbar-brand:hover img {
+  opacity: 0.8;
+}
+
+.dk-navbar .nav-link {
+  color: rgba(245, 245, 245, 0.85) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem !important;
+  position: relative;
+  transition: color 0.3s ease;
+  font-family: var(--pg-font-sans);
+}
+.dk-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #DB222A;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.dk-navbar .nav-link:hover,
+.dk-navbar .nav-link.active {
+  color: #DB222A !important;
+}
+.dk-navbar .nav-link:hover::after,
+.dk-navbar .nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.dk-back-link-logo {
+  height: 15px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+}
+
+.dk-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(245, 245, 245, 0.25);
+  border-radius: 25px;
+  color: rgba(245, 245, 245, 0.85);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: var(--pg-font-sans);
+}
+.dk-back-link:hover {
+  background-color: rgba(245, 245, 245, 0.1);
+  border-color: rgba(245, 245, 245, 0.5);
+  color: #F5F5F5;
+}
+
+.dk-navbar .navbar-toggler {
+  border-color: rgba(245, 245, 245, 0.2);
+  padding: 0.25rem 0.5rem;
+}
+.dk-navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(219, 34, 42, 0.25);
+}
+.dk-navbar .navbar-toggler-icon {
+  background-image: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dk-navbar .navbar-toggler-icon i {
+  font-size: 1.25rem;
+  color: #F5F5F5;
+}
+
+@media (max-width: 991.98px) {
+  .dk-navbar .navbar-collapse {
+    background-color: #1D3958;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0.5rem;
+  }
+
+  .dk-navbar .nav-link {
+    padding: 0.75rem 0 !important;
+    text-align: center;
+  }
+
+  .dk-navbar .nav-link::after {
+    display: none;
+  }
+
+  .dk-back-link {
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+}
