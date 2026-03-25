@@ -7,6 +7,11 @@
   padding: 6rem 0 4rem;
   position: relative;
   overflow: hidden;
+  transition: padding 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dk-cards-section.is-hero-active {
+  padding-bottom: 2rem;
 }
 
 /* ── Header ── */
@@ -29,7 +34,141 @@
   margin: 0 auto;
 }
 
-/* ── Card Hand Wrapper ── */
+/* ══════════════════════════════
+   HERO STAGE WRAPPER — grid height transition
+   ══════════════════════════════ */
+.dk-hero-stage-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.dk-hero-stage-wrap.is-open {
+  grid-template-rows: 1fr;
+}
+.dk-hero-stage-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ══════════════════════════════
+   HERO STAGE
+   ══════════════════════════════ */
+.dk-hero-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2.5rem 1rem 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.dk-hero-card-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 280px;
+  cursor: none;
+}
+
+.dk-hero-card-display {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(5, 60, 94, 0.2),
+    0 0 0 3px rgba(219, 34, 42, 0.3);
+  animation: dkHeroCardIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+/* Magnifier loupe */
+.dk-loupe {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 3px rgba(255, 255, 255, 0.2),
+    0 0 0 1px rgba(5, 60, 94, 0.25);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  /* subtle inner vignette */
+  background-color: transparent;
+}
+
+.dk-hero-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dk-hero-card-details {
+  max-width: 400px;
+  animation: dkHeroDetailsIn 0.5s 0.15s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.dk-hero-card-name {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 2.4rem;
+  color: #1D3958;
+  margin-bottom: 0.75rem;
+}
+
+.dk-hero-card-desc {
+  color: #4C334D;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.dk-hero-close-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1.5px solid #942B3B;
+  color: #942B3B;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dk-hero-close-btn:hover {
+  background-color: #942B3B;
+  color: #fff;
+}
+
+@keyframes dkHeroCardIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes dkHeroDetailsIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ══════════════════════════════
+   CARD HAND WRAPPER
+   ══════════════════════════════ */
 .dk-cards-hand-wrapper {
   position: relative;
   padding: 0.75rem 0;
@@ -64,7 +203,9 @@
   transform-origin: 50% 100%;
 }
 
-/* ── Card Fan ── */
+/* ══════════════════════════════
+   CARD FAN (default state)
+   ══════════════════════════════ */
 .dk-cards-hand {
   display: flex;
   justify-content: center;
@@ -81,7 +222,8 @@
   transform: translateY(var(--card-offset)) rotate(var(--card-angle));
   transform-origin: 50% 100%;
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow 0.35s ease;
+              box-shadow 0.35s ease,
+              opacity 0.3s ease;
   cursor: pointer;
   position: relative;
   z-index: var(--card-z);
@@ -110,7 +252,59 @@
   -webkit-user-drag: none;
 }
 
-/* ── Info Area ── */
+/* ══════════════════════════════
+   HAND MODE (hero is active) — mini fan
+   ══════════════════════════════ */
+.dk-cards-hand[data-hand-mode="true"] {
+  min-height: 170px;
+  padding: 0.5rem 0 0;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dk-cards-hand[data-hand-mode="true"] .dk-playing-card {
+  width: 90px;
+  margin: 0 -10px;
+  /* Keep fan transform from CSS vars */
+  transform: translateY(var(--card-offset)) rotate(var(--card-angle));
+  transform-origin: 50% 100%;
+  border-radius: 8px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              opacity 0.25s ease;
+}
+
+.dk-cards-hand[data-hand-mode="true"] .dk-playing-card:hover {
+  transform: translateY(-20px) rotate(0deg) scale(1.1);
+  z-index: 10 !important;
+  box-shadow:
+    0 14px 28px rgba(5, 60, 94, 0.18),
+    0 0 0 2px rgba(219, 34, 42, 0.45);
+}
+
+.dk-cards-hand[data-hand-mode="true"] .dk-playing-card.is-active-hero {
+  opacity: 0.35;
+  box-shadow: 0 0 0 2px rgba(219, 34, 42, 0.5);
+  pointer-events: none;
+  /* stay in fan position, don't lift */
+  transform: translateY(var(--card-offset)) rotate(var(--card-angle)) !important;
+}
+
+/* ── Hand hint text ── */
+.dk-hand-hint {
+  text-align: center;
+  color: #942B3B;
+  font-size: 0.9rem;
+  opacity: 0.5;
+  margin: 0.75rem 0 0;
+}
+.dk-hand-hint i {
+  margin-right: 0.4rem;
+}
+
+/* ══════════════════════════════
+   INFO AREA (fan mode only)
+   ══════════════════════════════ */
 .dk-card-info {
   text-align: center;
   min-height: 8rem;
@@ -148,6 +342,15 @@
   margin-right: 0.4rem;
 }
 
+/* Show correct hint per context */
+.dk-hint-mobile { display: none; }
+.dk-hint-desktop { display: block; }
+
+@media (max-width: 767.98px) {
+  .dk-hint-mobile  { display: block; }
+  .dk-hint-desktop { display: none;  }
+}
+
 @keyframes dkCardInfoIn {
   from {
     opacity: 0;
@@ -159,7 +362,21 @@
   }
 }
 
-/* ── Responsive ── */
+/* ══════════════════════════════
+   TOUCH DEVICES — disable loupe, restore cursor
+   ══════════════════════════════ */
+@media (pointer: coarse) {
+  .dk-hero-card-wrap {
+    cursor: default;
+  }
+  .dk-loupe {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════ */
 @media (max-width: 1199.98px) {
   .dk-playing-card {
     width: 155px;
@@ -170,6 +387,9 @@
   }
   .dk-back-right {
     margin-right: -370px;
+  }
+  .dk-hero-card-wrap {
+    width: 240px;
   }
 }
 
@@ -187,27 +407,120 @@
   .dk-back-accent {
     display: none;
   }
+  .dk-hero-card-wrap {
+    width: 220px;
+  }
+  .dk-hero-card-name {
+    font-size: 2rem;
+  }
+  .dk-hero-card-desc {
+    font-size: 1.05rem;
+  }
+  .dk-hero-stage {
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 767.98px) {
-  .dk-cards-hand {
-    flex-wrap: wrap;
-    justify-content: center;
+  /* Allow horizontal scroll to escape the section's overflow:hidden */
+  .dk-cards-section {
+    overflow-x: visible;
+  }
+
+  /* Fan mode mobile — horizontal scroll carousel */
+  .dk-cards-hand:not([data-hand-mode="true"]) {
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    min-height: 210px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 1.5rem 2rem 2rem;
+    scroll-padding: 0 2rem;
     gap: 0.75rem;
-    min-height: auto;
-    padding: 0;
+    /* negative margins no longer needed */
   }
-  .dk-playing-card {
-    width: 28%;
-    min-width: 100px;
+  .dk-cards-hand:not([data-hand-mode="true"])::-webkit-scrollbar {
+    display: none;
+  }
+  .dk-cards-hand:not([data-hand-mode="true"]) .dk-playing-card {
+    width: 130px;
+    flex-shrink: 0;
     margin: 0;
-    transform: none !important;
-    border-radius: 8px;
+    scroll-snap-align: center;
+    /* keep the fan tilt for visual flavour, but reduced */
+    transform: rotate(var(--card-angle)) scale(0.96);
+    transform-origin: 50% 100%;
+    border-radius: 9px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
-  .dk-playing-card:hover,
-  .dk-playing-card.is-lifted {
-    transform: translateY(-6px) scale(1.03) !important;
+  .dk-cards-hand:not([data-hand-mode="true"]) .dk-playing-card:active {
+    transform: rotate(0deg) translateY(-10px) scale(1.05) !important;
+    z-index: 20 !important;
+    box-shadow:
+      0 18px 36px rgba(5, 60, 94, 0.22),
+      0 0 0 2px rgba(219, 34, 42, 0.45) !important;
   }
+
+  /* Scroll hint — fades after first interaction */
+  .dk-cards-hand-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    background: linear-gradient(to left, #eceae6 20%, transparent);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .is-hero-active .dk-cards-hand-wrapper::after {
+    display: none;
+  }
+
+  /* Hero stage mobile */
+  .dk-hero-stage {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1rem 1.5rem;
+    text-align: center;
+  }
+  .dk-hero-card-wrap {
+    width: min(55vw, 220px);
+    cursor: default;
+  }
+  .dk-hero-card-details {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  .dk-hero-card-name {
+    font-size: 1.8rem;
+  }
+  .dk-hero-card-desc {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .dk-hero-close-btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.625rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Hand mode mini fan */
+  .dk-cards-hand[data-hand-mode="true"] {
+    min-height: 140px;
+  }
+  .dk-cards-hand[data-hand-mode="true"] .dk-playing-card {
+    width: 70px;
+    margin: 0 -8px;
+  }
+
   .dk-card-info-name {
     font-size: 1.3rem;
   }
@@ -217,10 +530,27 @@
 }
 
 @media (max-width: 479.98px) {
-  .dk-playing-card {
-    width: 42%;
-  }
   .dk-cards-section {
-    padding: 3rem 0 2rem;
+    padding: 3rem 0 1.5rem;
+  }
+  .dk-cards-hand:not([data-hand-mode="true"]) {
+    min-height: 185px;
+    padding: 1.25rem 1.5rem 1.75rem;
+  }
+  .dk-cards-hand:not([data-hand-mode="true"]) .dk-playing-card {
+    width: 115px;
+  }
+  .dk-hero-card-wrap {
+    width: min(65vw, 195px);
+  }
+  .dk-hero-card-name {
+    font-size: 1.6rem;
+  }
+  .dk-cards-hand[data-hand-mode="true"] {
+    min-height: 115px;
+  }
+  .dk-cards-hand[data-hand-mode="true"] .dk-playing-card {
+    width: 50px;
+    margin: 0 -6px;
   }
 }

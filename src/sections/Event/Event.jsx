@@ -7,8 +7,8 @@ export default function Event() {
       <div className="container">
         <div className="dk-event-wrapper reveal">
           <div className="dk-event-badge">
-            <i className="bi bi-megaphone-fill"></i>
-            Coming Soon
+            <i className="bi bi-calendar-check-fill"></i>
+            March 30, 2026
           </div>
 
           <h2 className="dk-section-title dk-event-title">{diktadorEvent.title}</h2>

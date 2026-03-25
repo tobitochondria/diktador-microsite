@@ -70,10 +70,11 @@ export const diktadorEvent = {
   title: 'Game Launch Event',
   description: 'Be among the first to experience Diktador! Join us for the official launch event featuring live gameplay demos, a Q&A with the creators, and exclusive first-edition copies.',
   details: [
-    { icon: 'bi-calendar-event', label: 'Date', value: 'To be announced' },
-    { icon: 'bi-geo-alt', label: 'Venue', value: 'To be announced' },
+    { icon: 'bi-calendar-event', label: 'Date', value: 'March 30, 2026' },
+    { icon: 'bi-clock', label: 'Time', value: '6:00 PM – 9:00 PM' },
+    { icon: 'bi-geo-alt', label: 'Venue', value: 'Quezon City (exact venue to be announced)' },
     { icon: 'bi-people', label: 'Slots', value: 'Limited slots available' },
   ],
-  signupUrl: 'https://forms.google.com/diktador-signup',
+  signupUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdaNWAd_NzhCP63hvd_d9QsClSSYgftk1v_qBrQdpfLr0HMTA/viewform',
   signupLabel: 'Sign Up for the Launch Event',
 };
