@@ -6,7 +6,7 @@ const LOGOTYPE = '/assets/images/logos/diktador-logotype.svg';
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg dk-navbar fixed-top">
+    <nav className="navbar navbar-expand-lg dk-navbar fixed-top" aria-label="Main navigation">
       <div className="container">
         <Link
           to="dk-hero"
@@ -16,7 +16,7 @@ export default function Navbar() {
           role="button"
           aria-label="Go to top"
         >
-          <img src={LOGOTYPE} alt="Diktador!" />
+          <img src={LOGOTYPE} alt="Diktador! Card Game — Home" />
         </Link>
 
         <button

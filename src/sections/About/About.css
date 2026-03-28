@@ -103,6 +103,18 @@
   z-index: 1;
 }
 
+/* Mobile-only image: hidden on large screens */
+.dk-about-image-mobile {
+  display: none;
+  margin-bottom: 1.5rem;
+}
+.dk-about-image-mobile img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(5, 60, 94, 0.15);
+}
+
 .dk-about-image img {
   width: 100%;
   max-width: 520px;
@@ -116,6 +128,13 @@
   }
   .dk-section-title {
     font-size: 1.75rem;
+  }
+  /* Show mobile image, hide desktop column */
+  .dk-about-image-mobile {
+    display: block;
+  }
+  .dk-about-image-desktop {
+    display: none;
   }
 }
 

@@ -66,6 +66,12 @@
   max-width: 800px;
 }
 
+.dk-hero-h1-wrap {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
 .dk-hero-logo {
   width: 420px;
   max-width: 85%;

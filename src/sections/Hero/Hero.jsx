@@ -21,7 +21,9 @@ export default function Hero() {
       </div>
 
       <div className="dk-hero-content">
-        <img src={LOGOTYPE} alt="Diktador!" className="dk-hero-logo" />
+        <h1 className="dk-hero-h1-wrap">
+          <img src={LOGOTYPE} alt="Diktador! — A Filipino Card Game of Power, Resistance and Survival" className="dk-hero-logo" />
+        </h1>
         <p className="dk-hero-tagline">{diktadorHero.tagline}</p>
         <div className="dk-hero-collab-wrap">
           <div className="dk-hero-collab">

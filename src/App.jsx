@@ -18,8 +18,16 @@ function App() {
         <Cards />
         <Event />
       </main>
-      <footer className="dk-footer">
+      <footer className="dk-footer" role="contentinfo">
         <div className="container text-center">
+          <div className="dk-footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61588054023589" target="_blank" rel="noopener noreferrer" className="dk-footer-social-link" aria-label="Facebook">
+              <i className="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/diktadorcardgame2026/" target="_blank" rel="noopener noreferrer" className="dk-footer-social-link" aria-label="Instagram">
+              <i className="bi bi-instagram"></i>
+            </a>
+          </div>
           <p className="dk-footer-text">
             <strong>Diktador!</strong> is a collaboration between{' '}
             <a href="https://www.projectgunita.com" className="dk-footer-link" target="_blank" rel="noopener noreferrer">Project Gunita</a>{' '}

@@ -18,6 +18,9 @@ export default function About() {
             <div className="dk-about-text reveal">
               <h2 className="dk-section-title">{diktadorAbout.title}</h2>
               <div className="dk-title-underline"></div>
+              <div className="dk-about-image-mobile reveal">
+                <img src={CARD_STACK} alt="Diktador! card game cards arranged in a stack showing different role illustrations" />
+              </div>
               {diktadorAbout.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -35,9 +38,9 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 dk-about-image-desktop">
             <div className="dk-about-image reveal">
-              <img src={CARD_STACK} alt="Diktador! card game box and cards" />
+              <img src={CARD_STACK} alt="Diktador! card game cards arranged in a stack showing different role illustrations" />
             </div>
           </div>
         </div>

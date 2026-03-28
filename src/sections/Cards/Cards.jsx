@@ -141,7 +141,7 @@ export default function Cards() {
                   <div className="dk-hero-card-display" key={displayRole.id}>
                     <img
                       src={displayRole.image}
-                      alt={displayRole.name}
+                      alt={`${displayRole.name} role card — ${displayRole.description}`}
                       className="dk-hero-card-img"
                     />
                   </div>
@@ -214,7 +214,7 @@ export default function Cards() {
               >
                 <img
                   src={role.image}
-                  alt={role.name}
+                  alt={`${role.name} — ${role.description}`}
                   className="dk-playing-card-img"
                   loading="lazy"
                 />

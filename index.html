@@ -1,32 +1,89 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-PH">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
-    <title>Diktador! — A Card Game of Power, Resistance, and Survival</title>
-    <meta name="description" content="Diktador! is a strategic card game set against the backdrop of authoritarian rule. A collaboration between Project Gunita and the Concerned Artists of the Philippines." />
-    <meta name="keywords" content="Diktador, card game, Martial Law, Philippines, Project Gunita, Concerned Artists of the Philippines, resistance, dictatorship, history" />
+    <title>Diktador! — A Filipino Card Game of Power, Resistance & Survival</title>
+    <meta name="description" content="Diktador! is a strategic Filipino card game about resisting authoritarian rule. Pre-order the first edition — by Concerned Artists of the Philippines × Project Gunita." />
+    <meta name="keywords" content="Diktador card game, Filipino card game, Martial Law Philippines, resistance board game, Philippine history card game, Project Gunita, Concerned Artists of the Philippines, dictatorship game, tabletop game Philippines" />
     <meta name="author" content="Project Gunita" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://diktador.cards/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Diktador! Card Game" />
-    <meta property="og:title" content="Diktador! — A Card Game of Power, Resistance, and Survival" />
-    <meta property="og:description" content="Diktador! is a strategic card game set against the backdrop of authoritarian rule. A collaboration between Project Gunita and the Concerned Artists of the Philippines." />
+    <meta property="og:title" content="Diktador! — A Filipino Card Game of Power, Resistance & Survival" />
+    <meta property="og:description" content="Take on the role of citizens resisting a dictatorship in this strategic Filipino card game. Pre-order the first edition now." />
+    <meta property="og:url" content="https://diktador.cards/" />
+    <meta property="og:image" content="https://diktador.cards/assets/images/card-stack.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_PH" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Diktador! — A Filipino Card Game of Power, Resistance & Survival" />
+    <meta name="twitter:description" content="Take on the role of citizens resisting a dictatorship in this strategic Filipino card game. Pre-order the first edition now." />
+    <meta name="twitter:image" content="https://diktador.cards/assets/images/card-stack.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/logos/diktador-roundel-favicon.svg" />
+    <meta name="theme-color" content="#053C5E" />
 
-    <!-- Google Fonts -->
+    <!-- Preconnect & Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data: WebSite + Product -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Diktador! Card Game",
+          "url": "https://diktador.cards/",
+          "description": "Diktador! is a strategic Filipino card game about resisting authoritarian rule, by Concerned Artists of the Philippines and Project Gunita.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Project Gunita",
+            "url": "https://www.projectgunita.com"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Diktador! Card Game — First Edition",
+          "description": "A strategic card game set against the backdrop of authoritarian rule. Players take on the roles of citizens navigating the tension between complicity and resistance under a dictatorship.",
+          "image": "https://diktador.cards/assets/images/card-stack.png",
+          "brand": {
+            "@type": "Organization",
+            "name": "Concerned Artists of the Philippines"
+          },
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/PreOrder",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSdaNWAd_NzhCP63hvd_d9QsClSSYgftk1v_qBrQdpfLr0HMTA/viewform"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Preload critical hero assets -->
+    <link rel="preload" href="/assets/images/logos/diktador-logotype.svg" as="image" type="image/svg+xml" />
   </head>
   <body>
+    <noscript>
+      <div style="padding:2rem;text-align:center;font-family:Georgia,serif;color:#1D3958;">
+        <h1>Diktador! &mdash; A Filipino Card Game of Power, Resistance &amp; Survival</h1>
+        <p>Diktador! is a strategic card game set against the backdrop of authoritarian rule. Players take on the roles of citizens navigating complicity and resistance under a dictatorship. Developed by Concerned Artists of the Philippines and Project Gunita.</p>
+        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdaNWAd_NzhCP63hvd_d9QsClSSYgftk1v_qBrQdpfLr0HMTA/viewform">Pre-order the first edition</a></p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
