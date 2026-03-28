@@ -22,10 +22,9 @@ function App() {
         <div className="container text-center">
           <p className="dk-footer-text">
             <strong>Diktador!</strong> is a collaboration between{' '}
-            <a href="https://projectgunita.com" className="dk-footer-link" target="_blank" rel="noopener noreferrer">
-              Project Gunita
-            </a>{' '}
-            and the Concerned Artists of the Philippines.
+            <a href="https://www.projectgunita.com" className="dk-footer-link" target="_blank" rel="noopener noreferrer">Project Gunita</a>{' '}
+            and the{' '}
+            <a href="https://www.facebook.com/artistangbayan/" className="dk-footer-link" target="_blank" rel="noopener noreferrer">Concerned Artists of the Philippines</a>.
           </p>
           <p className="dk-footer-copyright">
             &copy; {new Date().getFullYear()} Project Gunita. All rights reserved.

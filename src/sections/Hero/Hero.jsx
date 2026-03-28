@@ -2,14 +2,17 @@ import { Link } from 'react-scroll';
 import { diktadorHero } from '../../data/diktadorData';
 import './Hero.css';
 
-const LOGOTYPE = '/assets/images/diktador/diktador-logotype.png';
-const ROUNDEL = '/assets/images/diktador/diktador-rounded-logo.png';
+const LOGOTYPE = '/assets/images/logos/diktador-logotype.svg';
+const ROUNDEL = '/assets/images/logos/diktador-roundel.svg';
+const LOGO = '/assets/images/logos/diktador-logo.svg';
+const PG_LOGO = '/assets/images/logos/pg-logo.svg';
+const CAP_LOGO = '/assets/images/logos/cap-logo.svg';
 
 export default function Hero() {
   return (
     <section id="dk-hero" className="dk-hero-section">
       <div className="dk-hero-bg">
-        <img src="/assets/images/diktador/back-card.png" alt="" aria-hidden="true" />
+        <img src={LOGO} alt="" aria-hidden="true" />
       </div>
       <div className="dk-hero-overlay"></div>
 
@@ -20,7 +23,17 @@ export default function Hero() {
       <div className="dk-hero-content">
         <img src={LOGOTYPE} alt="Diktador!" className="dk-hero-logo" />
         <p className="dk-hero-tagline">{diktadorHero.tagline}</p>
-        <p className="dk-hero-subtitle">{diktadorHero.subtitle}</p>
+        <div className="dk-hero-collab-wrap">
+          <div className="dk-hero-collab">
+            <a href="https://www.facebook.com/artistangbayan/" target="_blank" rel="noopener noreferrer" className="dk-hero-collab-link">
+              <img src={CAP_LOGO} alt="Concerned Artists of the Philippines" className="dk-hero-collab-logo" />
+            </a>
+            <span className="dk-hero-collab-x">&times;</span>
+            <a href="https://www.projectgunita.com" target="_blank" rel="noopener noreferrer" className="dk-hero-collab-link">
+              <img src={PG_LOGO} alt="Project Gunita" className="dk-hero-collab-logo" />
+            </a>
+          </div>
+        </div>
         <div className="dk-hero-cta">
           <Link
             to="dk-about"
@@ -40,7 +53,7 @@ export default function Hero() {
             className="dk-btn-outline"
             role="button"
           >
-            Join the Launch
+            Pre-Order
           </Link>
         </div>
       </div>

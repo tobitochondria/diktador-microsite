@@ -1,40 +1,33 @@
-import { diktadorEvent } from '../../data/diktadorData';
+import { diktadorPreorder } from '../../data/diktadorData';
 import './Event.css';
+
+const ROUNDEL = '/assets/images/logos/diktador-roundel.svg';
 
 export default function Event() {
   return (
-    <section id="dk-event" className="dk-event-section">
+    <section id="dk-event" className="dk-preorder-section">
+      <div className="dk-preorder-roundel" aria-hidden="true">
+        <img src={ROUNDEL} alt="" />
+      </div>
       <div className="container">
-        <div className="dk-event-wrapper reveal">
-          <div className="dk-event-badge">
-            <i className="bi bi-calendar-check-fill"></i>
-            March 30, 2026
+        <div className="dk-preorder-wrapper reveal">
+          <div className="dk-preorder-badge">
+            <i className="bi bi-stars"></i>
+            First Edition
           </div>
 
-          <h2 className="dk-section-title dk-event-title">{diktadorEvent.title}</h2>
+          <h2 className="dk-section-title dk-preorder-title">Pre-Order Diktador!</h2>
           <div className="dk-title-underline dk-title-underline-center"></div>
-          <p className="dk-event-desc">{diktadorEvent.description}</p>
-
-          <div className="dk-event-details">
-            {diktadorEvent.details.map((detail) => (
-              <div className="dk-event-detail" key={detail.label}>
-                <i className={`bi ${detail.icon}`}></i>
-                <div>
-                  <span className="dk-event-detail-label">{detail.label}</span>
-                  <span className="dk-event-detail-value">{detail.value}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="dk-preorder-desc">{diktadorPreorder.description}</p>
 
           <a
-            href={diktadorEvent.signupUrl}
-            className="dk-btn-primary dk-event-cta"
+            href={diktadorPreorder.formUrl}
+            className="dk-btn-primary dk-preorder-cta"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="bi bi-pencil-square me-2"></i>
-            {diktadorEvent.signupLabel}
+            <i className="bi bi-bag-fill me-2"></i>
+            {diktadorPreorder.ctaLabel}
           </a>
         </div>
       </div>

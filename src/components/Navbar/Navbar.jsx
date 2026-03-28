@@ -2,7 +2,7 @@ import { Link } from 'react-scroll';
 import { diktadorNav } from '../../data/diktadorData';
 import './Navbar.css';
 
-const LOGOTYPE = '/assets/images/diktador/diktador-logotype.png';
+const LOGOTYPE = '/assets/images/logos/diktador-logotype.svg';
 
 export default function Navbar() {
   return (

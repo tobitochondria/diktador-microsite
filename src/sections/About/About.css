@@ -61,29 +61,38 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #7C2E41;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .dk-collab-logos {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .dk-collab-logo {
-  height: 44px;
+  height: 56px;
   width: auto;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 /* PG logo is all-black SVG — scale it to match CAP logo visually */
 .dk-collab-logo-pg {
-  height: 36px;
+  height: 48px;
+}
+
+.dk-collab-logo-link {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+.dk-collab-logo-link:hover {
+  opacity: 0.65;
 }
 
 .dk-collab-x {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #4C334D;
   font-weight: 300;
 }

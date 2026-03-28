@@ -1,9 +1,128 @@
-.dk-event-section {
+.dk-preorder-section {
   background-color: #1D3958;
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
 }
+
+.dk-preorder-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(219, 34, 42, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.dk-preorder-roundel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.04;
+  z-index: 0;
+}
+.dk-preorder-roundel img {
+  width: 600px;
+  max-width: 90vw;
+  filter: brightness(0) invert(1);
+}
+
+.dk-preorder-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.dk-preorder-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background-color: rgba(219, 34, 42, 0.15);
+  border: 1px solid rgba(219, 34, 42, 0.3);
+  border-radius: 25px;
+  color: #DB222A;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+}
+
+.dk-preorder-title {
+  text-align: center;
+  color: #F5F5F5;
+}
+
+.dk-preorder-desc {
+  color: rgba(245, 245, 245, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.dk-preorder-perks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.dk-preorder-perk {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #F5F5F5;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.dk-preorder-perk > i {
+  font-size: 1.1rem;
+  color: #DB222A;
+}
+
+.dk-preorder-cta {
+  font-size: 1rem;
+  padding: 0.9rem 2.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .dk-preorder-section {
+    padding: 3.5rem 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .dk-preorder-section {
+    padding: 2.5rem 0;
+  }
+  .dk-preorder-wrapper {
+    padding: 0 0.25rem;
+  }
+  .dk-preorder-perks {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .dk-preorder-cta {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
 
 .dk-event-section::before {
   content: '';

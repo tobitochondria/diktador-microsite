@@ -2,7 +2,7 @@ import { useState, useCallback, useRef, useLayoutEffect } from 'react';
 import { diktadorRoles } from '../../data/diktadorData';
 import './Cards.css';
 
-const BACK_CARD = '/assets/images/diktador/back-card.png';
+const BACK_CARD = '/assets/images/cards/back-card.png';
 const CARD_ANGLES = [-18, -12, -6, 0, 6, 12, 18];
 const CARD_OFFSETS = [20, 10, 3, 0, 3, 10, 20];
 const CARD_Z = [1, 2, 3, 4, 3, 2, 1];
