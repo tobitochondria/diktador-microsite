@@ -68,6 +68,6 @@ export const diktadorRoles = [
 
 export const diktadorPreorder = {
   description: 'Secure your copy of Diktador! before it sells out. First-edition copies are limited — fill out the form and we\'ll get in touch with the details.',
-  formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdaNWAd_NzhCP63hvd_d9QsClSSYgftk1v_qBrQdpfLr0HMTA/viewform',
+  formUrl: 'https://forms.gle/e6pecVJktTn4Ptn26',
   ctaLabel: 'Pre-Order Now',
 };
