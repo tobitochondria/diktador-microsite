@@ -1,4 +1,4 @@
-import { diktadorPreorder } from '../../data/diktadorData';
+import { diktadorPreorder, diktadorSchedule } from '../../data/diktadorData';
 import './Event.css';
 
 const ROUNDEL = '/assets/images/logos/diktador-roundel.svg';
@@ -29,6 +29,21 @@ export default function Event() {
             <i className="bi bi-bag-fill me-2"></i>
             {diktadorPreorder.ctaLabel}
           </a>
+
+          <div className="dk-schedule-block">
+            <div className="dk-schedule-divider"></div>
+            <h3 className="dk-schedule-block-title">{diktadorSchedule.title}</h3>
+            <p className="dk-schedule-block-desc">{diktadorSchedule.description}</p>
+            <a
+              href={diktadorSchedule.formUrl}
+              className="dk-btn-outline-dark dk-schedule-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-calendar-event me-2"></i>
+              {diktadorSchedule.ctaLabel}
+            </a>
+          </div>
         </div>
       </div>
     </section>

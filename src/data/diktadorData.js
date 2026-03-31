@@ -3,8 +3,11 @@
 
 export const diktadorNav = [
   { label: 'About', to: 'dk-about' },
+  { label: 'How it Works', to: 'dk-howitworks' },
   { label: 'Roles', to: 'dk-cards' },
   { label: 'Pre-Order', to: 'dk-event' },
+  { label: 'Contact', to: 'dk-contact' },
+  { label: 'FAQ', to: '/faq', isPage: true },
 ];
 
 export const diktadorHero = {
@@ -13,7 +16,7 @@ export const diktadorHero = {
 };
 
 export const diktadorAbout = {
-  title: 'What is Diktador!?',
+  title: 'What is "Diktador!"?',
   paragraphs: [
     'Diktador! is a strategic card game set against the backdrop of authoritarian rule. Players take on the roles of citizens navigating the tension between complicity and resistance under a dictatorship.',
     'Developed in collaboration between Project Gunita and the Concerned Artists of the Philippines (CAP), the game transforms the weight of history into an interactive, thought-provoking experience — making the lessons of the Martial Law era accessible through play.',
@@ -70,4 +73,54 @@ export const diktadorPreorder = {
   description: 'Secure your copy of Diktador! before it sells out. First-edition copies are limited — fill out the form and we\'ll get in touch with the details.',
   formUrl: 'https://forms.gle/e6pecVJktTn4Ptn26',
   ctaLabel: 'Pre-Order Now',
+};
+
+export const diktadorHowToPlay = {
+  text: 'You and your friends play as ordinary people, activists, cultural workers, and communities navigating surveillance, propaganda, and state violence. Each round, you make choices, form alliances, and imagine what resistance can look like when the stakes are life, memory, and freedom. The game is facilitated by a game master or the',
+  facilitator: 'Diktador',
+  images: [
+    '/assets/images/irl/howtoplay-1.png',
+    '/assets/images/irl/howtoplay-2.png',
+    '/assets/images/irl/howtoplay-3.png',
+  ],
+};
+
+export const diktadorFaq = [
+  {
+    question: 'Is this game historically accurate?',
+    answer: 'Diktador! features campaigns from real life events from the Martial Law era; however, the game encourages creativity from the players as they embody their own characters.',
+  },
+  {
+    question: 'How long is a game?',
+    answer: 'A typical campaign takes about 1 hour to play, depending on the number of players and how much discussion happens during the session.',
+  },
+  {
+    question: 'Is it suitable for young people, particularly students? What are the recommended ages?',
+    answer: 'Yes! \'Diktador!\' is recommended as a teaching tool for young students, particularly, ages 16 and above, to learn about Martial Law history in a more engaging manner.\n\nAside from young students, in our latest play test, even actual Martial Law survivors were able to keep up, understand the mechanics, and enjoy the game!',
+  },
+  {
+    question: 'How many people does it take to play?',
+    answer: 'At least three people (1 Diktador, 2 character-players).',
+  },
+  {
+    question: 'When can we expect to receive our pre-orders?',
+    answer: 'We are targeting the production to start early in April, so you may receive your pre-orders by the last week of April or early May. We will regularly update you on this matter as we make sure that we provide you with the best version of \'Diktador!\'.',
+  },
+  {
+    question: 'Can we invite you to run a game or workshop?',
+    answer: 'Yes, subject to schedule and resources. Use the contact form, and we\'ll coordinate with you or your institution.',
+  },
+];
+
+export const diktadorSchedule = {
+  title: 'Schedule a Game Night',
+  description: 'Bring Diktador! to your school, org, or community space. Sign up through this form:',
+  formUrl: 'https://forms.gle/csSzF9gDipkKWYxd8',
+  ctaLabel: 'Schedule a Game Night with Us',
+};
+
+export const diktadorContact = {
+  text: 'You may reach us through our official social media channels on Facebook or Instagram.',
+  facebook: 'https://www.facebook.com/profile.php?id=61588054023589',
+  instagram: 'https://www.instagram.com/diktadorcardgame2026/',
 };

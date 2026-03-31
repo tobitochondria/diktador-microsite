@@ -227,16 +227,46 @@
 }
 
 @media (max-width: 767.98px) {
+  .dk-hero-section {
+    min-height: calc(100svh - var(--dk-navbar-height));
+  }
+  .dk-hero-content {
+    padding: 1.25rem;
+  }
   .dk-hero-logo {
-    width: 280px;
+    width: 260px;
   }
   .dk-hero-tagline {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
   }
   .dk-hero-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+  .dk-hero-collab-logo {
+    height: 34px;
+  }
+  .dk-hero-collab {
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
   }
   .dk-hero-roundel img {
-    width: 400px;
+    width: 350px;
+  }
+  .dk-hero-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .dk-btn-primary,
+  .dk-btn-outline {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.85rem 1.5rem;
+    min-height: 48px;
+  }
+  .dk-hero-scroll {
+    bottom: 1rem;
+    font-size: 1.25rem;
   }
 }

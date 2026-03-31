@@ -1,0 +1,52 @@
+/* ==============================
+   DIKTADOR – Schedule Section
+   ============================== */
+
+.dk-schedule-section {
+  background-color: #ffffff;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dk-schedule-wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.dk-schedule-title {
+  color: #053C5E;
+  text-align: center;
+}
+
+.dk-schedule-desc {
+  color: #353652;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.dk-schedule-cta {
+  font-size: 1rem;
+  padding: 0.9rem 2.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .dk-schedule-section {
+    padding: 3.5rem 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .dk-schedule-section {
+    padding: 2.5rem 0;
+  }
+  .dk-schedule-cta {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+}

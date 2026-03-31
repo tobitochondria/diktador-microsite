@@ -1,0 +1,102 @@
+/* ==============================
+   DIKTADOR – FAQ Page
+   ============================== */
+
+.dk-faq-page {
+  padding: calc(var(--dk-navbar-height) + 3rem) 0 4rem;
+  background-color: #F5F5F5;
+  min-height: 100vh;
+}
+
+.dk-faq-back {
+  display: inline-flex;
+  align-items: center;
+  color: #053C5E;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+.dk-faq-back:hover {
+  color: #DB222A;
+}
+
+.dk-faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dk-faq-title {
+  color: #053C5E;
+  text-align: center;
+}
+
+.dk-faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.dk-faq-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 12px rgba(5, 60, 94, 0.06);
+  border-left: 4px solid #DB222A;
+}
+
+.dk-faq-question {
+  font-family: var(--pg-font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #053C5E;
+  margin-bottom: 0.75rem;
+}
+
+.dk-faq-answer {
+  color: #353652;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+.dk-faq-answer:last-child {
+  margin-bottom: 0;
+}
+
+.dk-faq-footer {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 767.98px) {
+  .dk-faq-page {
+    padding: calc(var(--dk-navbar-height) + 1.5rem) 0 2.5rem;
+  }
+
+  .dk-faq-header {
+    margin-bottom: 2rem;
+  }
+
+  .dk-faq-item {
+    padding: 1.25rem;
+  }
+
+  .dk-faq-question {
+    font-size: 1.05rem;
+  }
+
+  .dk-faq-answer {
+    font-size: 1rem;
+  }
+
+  .dk-faq-footer {
+    margin-top: 2rem;
+  }
+
+  .dk-faq-footer .dk-btn-primary {
+    width: 100%;
+    max-width: 300px;
+    min-height: 48px;
+  }
+}

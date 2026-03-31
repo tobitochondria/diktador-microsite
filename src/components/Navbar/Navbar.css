@@ -89,6 +89,15 @@
 }
 
 @media (max-width: 991.98px) {
+  .dk-navbar {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .dk-navbar .navbar-brand img {
+    height: 26px;
+  }
+
   .dk-navbar .navbar-collapse {
     background-color: #1D3958;
     padding: 1rem;
@@ -99,6 +108,10 @@
   .dk-navbar .nav-link {
     padding: 0.75rem 0 !important;
     text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .dk-navbar .nav-link::after {

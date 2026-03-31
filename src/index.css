@@ -33,6 +33,13 @@
   --dk-navbar-height: 72px;
 }
 
+/* Mobile navbar height */
+@media (max-width: 991.98px) {
+  :root {
+    --dk-navbar-height: 60px;
+  }
+}
+
 /* ==============================
    Base & Reset
    ============================== */

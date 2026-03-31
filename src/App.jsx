@@ -1,22 +1,27 @@
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './sections/Hero/Hero';
 import About from './sections/About/About';
+import HowItWorks from './sections/HowItWorks/HowItWorks';
 import Cards from './sections/Cards/Cards';
 import Event from './sections/Event/Event';
+import Contact from './sections/Contact/Contact';
+import FAQ from './pages/FAQ/FAQ';
 import useScrollReveal from './hooks/useScrollReveal';
 import './App.css';
 
-function App() {
+function HomePage() {
   useScrollReveal();
 
   return (
     <>
-      <Navbar />
       <main className="dk-page">
         <Hero />
         <About />
+        <HowItWorks />
         <Cards />
         <Event />
+        <Contact />
       </main>
       <footer className="dk-footer" role="contentinfo">
         <div className="container text-center">
@@ -39,6 +44,28 @@ function App() {
           </p>
         </div>
       </footer>
+    </>
+  );
+}
+
+function FAQPage() {
+  return (
+    <>
+      <main className="dk-page">
+        <FAQ />
+      </main>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/faq" element={<FAQPage />} />
+      </Routes>
     </>
   );
 }
